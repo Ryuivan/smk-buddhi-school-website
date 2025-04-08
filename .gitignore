@@ -6,15 +6,15 @@
 # /public/storage
 
 # Ignore semua storage...
-/storage/*
+# /storage/*
 # ...kecuali folder yang penting untuk gambar
-!storage/app
-!storage/app/public
-!storage/app/public/**
-!storage/framework
-!storage/framework/.gitignore
-!storage/logs
-!storage/logs/.gitignore
+# !storage/app
+# !storage/app/public
+# !storage/app/public/**
+# !storage/framework
+# !storage/framework/.gitignore
+# !storage/logs
+# !storage/logs/.gitignore
 
 /storage/*.key
 
