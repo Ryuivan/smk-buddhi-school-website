@@ -25,6 +25,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PublikasiController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -205,4 +206,13 @@ Route::get('gallery', function () {
         'title' => 'Gallery',
         'galleries' => $galleries,
     ]);
+});
+
+Route::get('/create-symlink', function () {
+    symlink(storage_path('/app/public'), public_path('storage'));
+    echo "Symlink Created. Thanks";
+});
+
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
 });
