@@ -122,7 +122,7 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login')->m
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
-Route::get('/register', function() {
+Route::get('/register', function () {
     return abort(404);
 });
 // Route::post('/register', [AuthController::class, 'register']);
@@ -205,4 +205,9 @@ Route::get('gallery', function () {
         'title' => 'Gallery',
         'galleries' => $galleries,
     ]);
+});
+
+Route::get('/create-symlink', function () {
+    symlink(storage_path('/app/public'), public_path('storage'));
+    echo "Symlink Created. Thanks";
 });
